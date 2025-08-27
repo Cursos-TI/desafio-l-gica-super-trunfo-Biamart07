@@ -13,6 +13,7 @@ int main() {
     float percapita1, percapita2;
     float superPoder1 = populacao1 + area1 + pib1 + pontosturisticos1 + densidade1 + 1/percapita1;
     float superPoder2 = populacao2 + area2 + pib2 + pontosturisticos2 + densidade2 + 1/percapita2;
+    int opcao;
 
     // cadastro da Carta 1
     printf("Digite o nome do estado da Carta 1 (ex: SP):\n");
@@ -91,7 +92,76 @@ int main() {
 
     //comparação de atributos das cartas
 
-    printf("Comparação de cartas (Atributo: População):\n");
+    printf("Escolha qual atributo você deseja comparar:\n");
+    printf("1. Atributo: População\n");
+    printf("2. Atributo: Area\n");
+    printf("3. Atributo: PIB\n");
+    printf("4. Atributo: Pontos Turísticos\n");
+    printf("5. Atributo: Densidade Populacional\n");
+    printf("6. Atributo: Renda Per capita\n");
+    scanf("%d", &opcao);
+
+    switch (opcao) {
+        case 1:
+            if (populacao1 > populacao2) {
+                printf("Atributo População: Carta 1 %s venceu!", estado1);
+            } else {
+                printf("Atributo População: Carta 2 %s venceu!", estado2);
+            }
+            break;
+
+        case 2:
+            if (area1 > area2) {
+                printf("Atributo Area: Carta 1 %s venceu!", estado1);
+            } else {
+                printf("Atributo Area: Carta 2 %s venceu!", estado2);
+            }
+            break;
+            
+        case 3:
+            if (pib1 > pib2) {
+                printf("Atributo Pib: Carta 1 %s venceu!", estado1);
+            } else {
+                printf("Atributo Pib: Carta 2 %s venceu!", estado2);
+            }
+            break;
+
+        case 4:
+            if (pontosturisticos1 > pontosturisticos2) {
+                printf("Atributo Pontos Turísticos: Carta 1 %s venceu!", estado1);
+            } else {
+                printf("Atributo Pontos Turísticos: Carta 2 %s venceu!", estado2);
+            }
+            break;
+            
+        case 5:
+            if (densidade1 < densidade2) {
+                printf("Atributo Densidade: Carta 1 %s venceu!", estado1);
+            } else {
+                printf("Atributo Densidade: Carta 2 %s venceu!", estado2);
+            }
+            break;
+            
+        case 6:
+            if (percapita1 > percapita2) {
+                printf("Atributo Renda Per capita: Carta 1 %s venceu!", estado1);
+            } else {
+                printf("Atributo Renda Per capita: Carta 2 %s venceu!", estado2);
+            }
+            break;   
+        default:
+            printf("Opção inválida. Tente novamente.\n");  
+        }
+    
+        return 0;
+}
+        
+
+
+
+
+
+    /*printf("Comparação de cartas (Atributo: População):\n");
     printf("Carta 1 - %s: %d\n", estado1, populacao1);
     printf("Carta 2 - %s: %d\n", estado2, populacao2);
     if (populacao1 > populacao2) {
@@ -154,4 +224,47 @@ int main() {
         printf("Resultado: Carta 2 venceu!\n");
     }
     return 0;
+}*/
+
+
+
+/*switch (variavel) {
+  case valor1:
+    // Código a ser executado se variavel == valor1
+    break;
+  case valor2:
+    // Código a ser executado se variavel == valor2
+    break;
+  // Você pode adicionar quantos casos forem necessários
+  default:
+    // Código a ser executado se nenhum dos casos acima for verdadeiro
 }
+*/
+
+/*#include <stdio.h>
+
+int main() {
+  int opcao;
+
+  printf("Escolha uma opção:\n");
+  printf("1. Verificar saldo\n");
+  printf("2. Fazer depósito\n");
+  printf("3. Fazer saque\n");
+  scanf("%d", &opcao);
+
+  switch (opcao) {
+    case 1:
+      printf("Saldo atual: R$ 1.000,00\n");
+      break;
+    case 2:
+      printf("Depósito realizado com sucesso\n");
+      break;
+    case 3:
+      printf("Saque realizado com sucesso\n");
+      break;
+    default:
+      printf("Opção inválida\n");
+  }
+
+  return 0;
+}*/
