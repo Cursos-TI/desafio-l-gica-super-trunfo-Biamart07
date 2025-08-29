@@ -13,7 +13,10 @@ int main() {
     float percapita1, percapita2;
     float superPoder1 = populacao1 + area1 + pib1 + pontosturisticos1 + densidade1 + 1/percapita1;
     float superPoder2 = populacao2 + area2 + pib2 + pontosturisticos2 + densidade2 + 1/percapita2;
-    int opcao;
+    int opcao1, opcao2;
+    float resultado;
+    float soma = opcao1 + opcao2;
+
 
     // cadastro da Carta 1
     printf("Digite o nome do estado da Carta 1 (ex: SP):\n");
@@ -92,16 +95,84 @@ int main() {
 
     //comparação de atributos das cartas
 
-    printf("Escolha qual atributo você deseja comparar:\n");
+    printf("Escolha o primeiro atributo que você deseja comparar:\n");
     printf("1. Atributo: População\n");
     printf("2. Atributo: Area\n");
     printf("3. Atributo: PIB\n");
     printf("4. Atributo: Pontos Turísticos\n");
     printf("5. Atributo: Densidade Populacional\n");
     printf("6. Atributo: Renda Per capita\n");
-    scanf("%d", &opcao);
+    scanf("%d", &opcao1);
 
-    switch (opcao) {
+    printf("Escolha o segundo atributo que você deseja comparar:\n");
+    printf("1. Atributo: População\n");
+    printf("2. Atributo: Area\n");
+    printf("3. Atributo: PIB\n");
+    printf("4. Atributo: Pontos Turísticos\n");
+    printf("5. Atributo: Densidade Populacional\n");
+    printf("6. Atributo: Renda Per capita\n");
+    scanf("%d", &opcao2);
+
+    switch (opcao1) {
+
+        if (opcao1 == opcao2) {
+            printf("Você não pode escolher o mesmo atributo 2 vezes. Tente novamente!");
+            break;
+        }
+
+        case 1:
+            if (populacao1 > populacao2) {
+                printf("Atributo População: Carta 1 %s venceu!", estado1);
+            } else {
+                printf("Atributo População: Carta 2 %s venceu!", estado2);
+            }
+            break;
+
+        case 2:
+            if (area1 > area2) {
+                printf("Atributo Area: Carta 1 %s venceu!", estado1);
+            } else {
+                printf("Atributo Area: Carta 2 %s venceu!", estado2);
+            }
+            break;
+            
+        case 3:
+            if (pib1 > pib2) {
+                printf("Atributo Pib: Carta 1 %s venceu!", estado1);
+            } else {
+                printf("Atributo Pib: Carta 2 %s venceu!", estado2);
+            }
+            break;
+
+        case 4:
+            if (pontosturisticos1 > pontosturisticos2) {
+                printf("Atributo Pontos Turísticos: Carta 1 %s venceu!", estado1);
+            } else {
+                printf("Atributo Pontos Turísticos: Carta 2 %s venceu!", estado2);
+            }
+            break;
+            
+        case 5:
+            if (densidade1 < densidade2) {
+                printf("Atributo Densidade: Carta 1 %s venceu!", estado1);
+            } else {
+                printf("Atributo Densidade: Carta 2 %s venceu!", estado2);
+            }
+            break;
+            
+        case 6:
+            if (percapita1 > percapita2) {
+                printf("Atributo Renda Per capita: Carta 1 %s venceu!", estado1);
+            } else {
+                printf("Atributo Renda Per capita: Carta 2 %s venceu!", estado2);
+            }
+            break;   
+        default:
+            printf("Opção inválida. Tente novamente.\n");  
+
+        }
+    
+        switch (opcao1) {
         case 1:
             if (populacao1 > populacao2) {
                 printf("Atributo População: Carta 1 %s venceu!", estado1);
@@ -152,7 +223,24 @@ int main() {
         default:
             printf("Opção inválida. Tente novamente.\n");  
         }
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         return 0;
 }
         
