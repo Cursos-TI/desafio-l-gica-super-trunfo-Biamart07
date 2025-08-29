@@ -14,8 +14,7 @@ int main() {
     float superPoder1 = populacao1 + area1 + pib1 + pontosturisticos1 + densidade1 + 1/percapita1;
     float superPoder2 = populacao2 + area2 + pib2 + pontosturisticos2 + densidade2 + 1/percapita2;
     int opcao1, opcao2;
-    float resultado;
-    float soma = opcao1 + opcao2;
+    char* resultado;
 
 
     // cadastro da Carta 1
@@ -224,20 +223,7 @@ int main() {
             printf("Opção inválida. Tente novamente.\n");  
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        resultato (superPoder1 > superPoder2) ? "Super Poder da Carta 1 venceu!" : "Super Poder da Carta 1 venceu!";
 
 
 
